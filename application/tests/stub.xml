@@ -1,0 +1,11 @@
+<filter>
+    <whitelist>
+        <directory suffix=".php">./application/models/</directory>
+    </whitelist>
+</filter>
+
+<logging>
+    <log type="coverage-html" target="./storage/logs/report" charset="UTF-8"
+        yui="true" highlight="true"
+        lowUpperBound="50" highLowerBound="80" />
+</logging>

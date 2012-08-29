@@ -18,7 +18,8 @@
 | that you want to handle requests with URIs that begin with "admin",
 | simply add it to the array like this:
 |
-|		'admin' => array(
+|		'admin' =>
+array(
 |			'location' => 'admin',
 |			'handles'  => 'admin',
 |		),
@@ -35,5 +36,11 @@
 
 return array(
     'docs' => array('handles' => 'docs'),
-    'orchestra' => array('auto' => true, 'handles' => 'orchestra')
+    'aware' => array(
+	  	'autoloads' => array(
+	    	'map' => array(
+	      		'Aware' => '(:bundle)/model.php'
+	    	),
+	  	)
+	)
 );

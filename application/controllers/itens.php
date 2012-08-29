@@ -14,8 +14,11 @@ class Itens_Controller extends Base_Controller {
     public function action_criar() {
         $item = new Item;
         $item->nome = Input::get("nome");
-        $item->save();
-        return Response::json(array("id" => $item->id));
+        if($item->save()) {
+            return Response::json(array("id" => $item->id));
+        } else {
+            return Response::json(array("status" => "ERROR"));
+        }
     }
 
     public function action_mudar_status() {
