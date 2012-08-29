@@ -1,0 +1,82 @@
+@import "bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
+
+body {
+	background: url('../img/bg.png');
+}
+
+section.container, section.container-fluid {
+	padding-top: 45px;
+}
+
+.form-actions {
+	&.clean {
+		background-color: transparent;
+		border: 0px;
+	}
+}
+
+.nav > .dropdown.active > a:hover {
+	color:#333;
+}
+
+.navbar {
+	.brand {
+		color: #333;
+		font-weight: bold;
+	}
+
+	.nav {
+		> li > a {
+			color: #666;
+
+			&:hover {
+				color: #333;
+			}
+		}
+
+		> .dropdown.open > a, > .dropdown.open > a:hover {
+			color:#333;
+		}
+
+	}
+
+	&.navbar-fixed-top {
+		.navbar-inner {
+			background: transparent url('../img/top-bar-white.png') repeat-x bottom left;
+			box-shadow: none;
+			height: 45px;
+		}
+	}
+}
+
+.pagination {
+	a.previous_page,span.previous_page {
+		border-left: 1px solid #ddd;
+	}
+	span {
+		float: left;
+		padding: 0 14px;
+		line-height: (@baseLineHeight * 2) - 2;
+		text-decoration: none;
+		border: 1px solid #ddd;
+		border-left-width: 0;
+	}
+}
+
+.table {
+	thead tr {
+		background: transparent url('../img/top-bar-white.png') repeat-x top left;
+	}
+
+	tbody td {
+		.meta {
+			font-size: 11px;
+		}
+	}
+}
+
+.select2-container {
+	&[class*="span"] {
+		margin-left: 0;
+	}
+}
