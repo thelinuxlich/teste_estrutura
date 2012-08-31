@@ -5,7 +5,7 @@ class Home_Controller extends Base_Controller {
 	{
         Asset::add("item","js/viewmodels/item.js");
         Asset::add("application","js/app.js");
-		$this->layout->content = View::make('home.index',array("itens" => Cache::get("itens",function() { return Item::all();})));
+		$this->layout->content = View::make('home.index',array("itens" => Cache::remember("itens",function() { return Item::all();},100)));
 	}
 
     public function action_sobre() {

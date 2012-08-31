@@ -8,7 +8,7 @@ class Itens_Controller extends Base_Controller {
         } else {
             Item::find(Input::get("id"))->delete();
         }
-        Cache::put("itens",Item::all());
+        Cache::forget("itens");
         return Response::json(array("status" => "OK"));
     }
 
@@ -16,7 +16,7 @@ class Itens_Controller extends Base_Controller {
         $item = new Item;
         $item->nome = Input::get("nome");
         if($item->save()) {
-            Cache::put("itens",Item::all());
+            Cache::forget("itens");
             return Response::json(array("id" => $item->id));
         } else {
             return Response::json(array("status" => "ERROR"));
@@ -27,7 +27,7 @@ class Itens_Controller extends Base_Controller {
         $item = Item::find(Input::get("id"));
         $item->status = !$item->status;
         $item->save();
-        Cache::put("itens",Item::all());
+        Cache::forget("itens");
         return Response::json(array("id" => $item->id));
     }
 }

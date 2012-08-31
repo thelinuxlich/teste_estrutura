@@ -45,7 +45,7 @@ VM = {
             item.status(!item.status());
        });
     },
-    itemNovo: KO(""),
+    itemNovo: KO("")
 };
 
 VM.existeSelecao = KO(function(){
